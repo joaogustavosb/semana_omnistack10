@@ -5,5 +5,11 @@
   "license": "GLP-3.0",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
   }
 }
