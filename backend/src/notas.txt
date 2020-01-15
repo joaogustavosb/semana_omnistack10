@@ -1,0 +1,39 @@
+
+MÉTODOS HTTP:
+    GET:    Buscando uma informação
+    POST:   Criar uma informção
+    PUT:    Editar uma informação
+    DELETE: Deletar uma informação
+
+PÂRAMETROS:
+    Query Params: Usado para filtrar, ordenar, paginar, etc... (req.query)
+    Route Params: Usado para identificar um recurso no PUT||DELETE (req.query)
+    Body:         Usado para enviar informações à aplicação, criação ou edição (req.body)
+
+CONTROLLERS:
+    INDEX:   Mostrar lista de informações
+    SHOW:    Mostrar somente uma informação
+    STORE:   Criar uma informação
+    UPADTE:  Editar uma informação
+    DESTROY: Deletar uma informação
+
+Banco de Dados:
+    MongoDB:
+        - Não relacional
+        - Usado para aplição com pouco relacionamento
+
+Estrutura de pastas
+    -node_modules: local de armazenamento dos arquivos dos modulos
+    
+    - src: local de armazenamento dos arquivos da aplicação
+        |__ index.js: arquivo inicial da aplicação
+        |__ router.js: gerenciador de rotas da aplicação
+        |__ Controllers
+                |_DevController: configurações de controler de usuario (cadastrar, editar, deletar, buscar)
+        |__ models: local para armazenar as representações de entidades
+                |__ dev.js: entidade dos desenvolvedores
+                |__ utils: arquivos extras, podem ser uteis para mais de uma entidade
+                    |__ ponintSchema: entidade da latitute e logitude
+    -.gitignore: avisa ao git quais pastas ignora na hora do commit
+    -package.json: armazena as configurações base da aplicação
+    -yarn.lock: cash do yarn
