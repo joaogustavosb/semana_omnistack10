@@ -1,5 +1,6 @@
 // importando o schema
 const dbDev = require("../models/dev")
+const parseStringAsArray = require("../utils/parseStringAsArray")
 const axios = require("axios")
 
 module.exports = {
@@ -14,7 +15,6 @@ module.exports = {
         // pegando dados do body 
         const { github_username: username, techs: tech, longitude: long, latitude: lat } = req.body;
 
-
         let dev = await dbDev.findOne({ github_username: username })
         if (dev) {
             return res.json({ ERRO: "USER EXIST", dev })
@@ -23,7 +23,7 @@ module.exports = {
         // requisição de dados do usuario
         const resp = await axios.get(`https://api.github.com/users/${username}`)
 
-        const techs = tech.split(',').map(technology => technology.trim())
+        const techs = parseStringAsArray(tech)
 
         // pegando somente oque será usado
         let { name = login, bio, avatar_url } = resp.data;

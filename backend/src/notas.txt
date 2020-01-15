@@ -28,8 +28,12 @@ Estrutura de pastas
     - src: local de armazenamento dos arquivos da aplicação
         |__ index.js: arquivo inicial da aplicação
         |__ router.js: gerenciador de rotas da aplicação
+        |__ utils
+                |__ parseStringAsArray: converte uma string em array
         |__ Controllers
-                |_DevController: configurações de controler de usuario (cadastrar, editar, deletar, buscar)
+                |__ DevController: configurações de controler de usuario (cadastrar, editar, deletar, buscar)
+                |__ SearchController.js: configurações de controler para busacar usuarios
+                
         |__ models: local para armazenar as representações de entidades
                 |__ dev.js: entidade dos desenvolvedores
                 |__ utils: arquivos extras, podem ser uteis para mais de uma entidade

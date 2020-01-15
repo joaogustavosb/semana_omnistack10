@@ -8,9 +8,8 @@ const app = express()
 
 //conectando ao banco de dados
 dataBase.connect("mongodb+srv://admin:teykeys321@semanaomnistack10-xxp63.gcp.mongodb.net/week10?retryWrites=true&w=majority", {
-    useNewUrlParser: true, useUnifiedTopology: true,
+    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
-
 // fazendo com a aplicação entenda json
 app.use(express.json())
 
