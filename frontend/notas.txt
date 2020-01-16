@@ -1,0 +1,23 @@
+React => utiliza de JSX (Js + HTML)
+    -> Pode ser ultilizado para diversas aplicações
+    --> Mobile, Web, Realidade Virtual, Tv, etc...
+
+React-Dom => cominica com a arvore de elemento
+    -> Apenas para Web
+
+Conceitos Principais do React
+ 
+ -> COMPONENTES: 
+    --> Função que retornar um conteudo, pode ser HTML, CSS ou Js
+    --> Apenas um componente por arquivos .js
+    --> Não interfere no restante da aplicação
+    --> Para ser colocado mais um componente sob o outro, deve se usar a tag fragment 
+        (<></componente></>)
+
+ -> PROPRIEDADE: 
+    --> Paramentros passados na chamada de um componente
+    --> Pode ser acessado atraves do comando "propos", passado na construção do componente
+ 
+ -> ESTADO: 
+    --> Informação mantida pelo componente
+    --> Informação que será atualizda pelo próprio componente
