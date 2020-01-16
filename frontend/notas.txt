@@ -18,6 +18,6 @@ Conceitos Principais do React
     --> Paramentros passados na chamada de um componente
     --> Pode ser acessado atraves do comando "propos", passado na construção do componente
  
- -> ESTADO: 
+ -> ESTADO (imutavel): 
     --> Informação mantida pelo componente
     --> Informação que será atualizda pelo próprio componente
