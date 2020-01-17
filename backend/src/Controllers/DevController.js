@@ -7,10 +7,12 @@ module.exports = {
 
     async index(req, res) {
         const developers = await dbDev.find();
+        
         return res.json(developers)
     },
 
     async store(req, res) {
+
 
         // pegando dados do body 
         const { github_username: username, techs: tech, longitude: long, latitude: lat } = req.body;
@@ -26,13 +28,14 @@ module.exports = {
         const techs = parseStringAsArray(tech)
 
         // pegando somente oque será usado
-        let { name = login, bio, avatar_url } = resp.data;
+        let { name = login, bio, avatar_url, public_repos } = resp.data;
 
         // enviando a localização do usuario
         const location = {
             type: 'Point',
             coordinates: [long, lat]
         }
+
 
         //Salvando no banco de dados    
         dev = await dbDev.create({
@@ -41,6 +44,7 @@ module.exports = {
             bio,
             avatar_url,
             techs,
+            public_repos,
             location
         })
 
