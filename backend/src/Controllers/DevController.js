@@ -7,7 +7,7 @@ module.exports = {
 
     async index(req, res) {
         const developers = await dbDev.find();
-        
+
         return res.json(developers)
     },
 
@@ -28,8 +28,11 @@ module.exports = {
         const techs = parseStringAsArray(tech)
 
         // pegando somente oque será usado
-        let { name = login, bio, avatar_url, public_repos } = resp.data;
-
+        let { name, bio, avatar_url, public_repos } = resp.data;
+        if (name == null) {
+            const { login } = resp.data
+            name = login
+        }
         // enviando a localização do usuario
         const location = {
             type: 'Point',
